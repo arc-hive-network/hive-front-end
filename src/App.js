@@ -4,11 +4,12 @@ import './App.css';
 
 function App() {
   return (
+    // remove className to swtich to styled-components
     <div className="App">
       <header className="App-header">
         <img src={logo} className="App-logo" alt="logo" />
         <p>
-          Edit <code>src/App.js</code> and save to reload.
+          Hive App
         </p>
         <a
           className="App-link"
