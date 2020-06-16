@@ -1,9 +1,13 @@
 import React from 'react';
 import { render } from '@testing-library/react';
-import App from './App';
+import App, { handleChange } from './App.js'
 
-test('renders learn react link', () => {
+test('renders Hive app text', () => {
   const { getByText } = render(<App />);
-  const linkElement = getByText(/learn react/i);
+  const linkElement = getByText(/Hive app/i);
   expect(linkElement).toBeInTheDocument();
 });
+
+test('test if 1 is 1', () => {
+  expect(handleChange).toBe(handleChange)
+})

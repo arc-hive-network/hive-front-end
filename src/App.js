@@ -1,8 +1,19 @@
-import React from 'react';
-import logo from './logo.svg';
+import React, { useState } from 'react'
+import reactLogo from './logo.svg';
+import testLogo from './Hive Logo.png'
 import './App.css';
 
 function App() {
+  const [logo, setLogo] = useState(reactLogo)
+
+  function handleChange () {
+    if (logo === reactLogo) {
+      setLogo(testLogo)
+    } else {
+      setLogo(reactLogo)
+    }
+  }
+
   return (
     // remove className to swtich to styled-components
     <div className="App">
@@ -11,14 +22,7 @@ function App() {
         <p>
           Hive App
         </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
+        <button onClick={handleChange}>Enter</button>
       </header>
     </div>
   );
