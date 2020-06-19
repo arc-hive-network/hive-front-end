@@ -1,10 +1,13 @@
 import React from 'react'
+import Header from '../shared/Header'
 
 const HiveMain = () => {
 
   return (
     <div>
-      <p>hi</p>
+      <Header />
+      <main>
+      </main>
     </div>
   )
 }
