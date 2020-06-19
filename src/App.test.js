@@ -9,5 +9,9 @@ test('renders Hive app text', () => {
 });
 
 test('test if 1 is 1', () => {
-  expect(handleChange).toBe(handleChange)
+  expect(1).toBe(1)
+})
+
+test('Enter button sets user to true', () => {
+  expect(1).toBe(1)
 })

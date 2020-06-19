@@ -1,6 +1,9 @@
 import React, { Fragment } from 'react'
 import Nav from 'react-bootstrap/Nav'
 import Navbar from 'react-bootstrap/Navbar'
+import Button from 'react-bootstrap/Button'
+import Form from 'react-bootstrap/Form'
+import FormControl from 'react-bootstrap/FormControl'
 
 
 // Seperate groups of option that appear on the main navbar
@@ -42,6 +45,10 @@ const Header = () => (
         <Nav className="ml-auto">
           { primaryOptions }
         </Nav>
+        <Form inline>
+          <FormControl type="text" placeholder="Search" className="mr-sm-2" />
+          <Button variant="outline-success">Search</Button>
+        </Form>
       </Navbar.Collapse>
     </Navbar>
   </Fragment>
