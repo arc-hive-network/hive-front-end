@@ -1,13 +1,13 @@
-import React from 'react'
+import React, { useState } from 'react'
 import './App.css'
 import Home from './components/Home/Home'
 
 function App() {
+  const [user, setUser] = useState(null)
 
   return (
-    // remove className to swtich to styled-components
-    <Home />
-  );
+    <Home user={user} setUser={setUser}/>
+  )
 }
 
 export default App;

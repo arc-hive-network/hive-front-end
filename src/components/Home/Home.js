@@ -1,42 +1,31 @@
-import React, { useState }  from 'react'
+import React, { Fragment } from 'react'
 import { Route, Link } from 'react-router-dom'
 import HiveMain from '../HiveMain/HiveMain'
 
-import reactLogo from '../../logo.svg';
-import testLogo from '../../Hive Logo.png'
+import hiveLogo from '../../Hive Logo.png'
 
-const Home = () => {
-  const [logo, setLogo] = useState(testLogo)
+const Home = ({ user, setUser }) => {
 
-  function handleChange () {
-    if (logo === reactLogo) {
-      setLogo(testLogo)
-    } else {
-      setLogo(reactLogo)
-    }
+  const enterPage = () => {
+    setUser(true)
   }
 
-  return (
-    <div>
-    <Route exact path='/' render={() => (
-      <div className="App">
-        <header className="App-header">
-          <img src={logo} className="App-logo" alt="logo" />
-          <p>
-            Hive App
-          </p>
-        <button onClick={handleChange}>Enter</button>
-        <Link to="/Main">Kane</Link>
-        </header>
-      </div>
-      )} />
-      {/* this div containsnavbar */}
-        <Route exact path='/Main' render={() => (
-          <div>
-            <HiveMain />
-          </div>
-        )} />
+  const landingPage = (
+    <div className="App">
+      <header className="App-header">
+        <img src={hiveLogo} className="App-logo" alt="logo" />
+        <p>
+          Hive App
+        </p>
+          <button onClick={enterPage}>Enter</button>
+      </header>
     </div>
+  )
+
+  return (
+    <Fragment>
+      { user ? <HiveMain /> : landingPage }
+    </Fragment>
   )
 }
 
