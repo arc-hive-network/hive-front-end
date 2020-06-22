@@ -2,6 +2,9 @@ import React from 'react'
 import Header from '../shared/Header'
 import { Route } from 'react-router-dom'
 
+// Sub Components
+import CreateCell from './subComp/CreateCell/CreateCell'
+
 const HiveMain = () => {
 
   return (
@@ -15,7 +18,7 @@ const HiveMain = () => {
           <div>messages</div>
         )} />
         <Route path='/createCell' render={() => (
-          <div>createCell</div>
+          <CreateCell />
         )} />
         <Route path='/feed' render={() => (
           <div>feed</div>
