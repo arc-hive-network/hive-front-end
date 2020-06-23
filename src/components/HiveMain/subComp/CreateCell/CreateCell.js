@@ -1,24 +1,13 @@
-import React, { useState, useEffect } from 'react'
+import React, { useState } from 'react'
 import Form from 'react-bootstrap/Form'
 import Button from 'react-bootstrap/Button'
+import Tag from './Tag'
 import styled from 'styled-components'
 
 const Div = styled.div`
   display: flex;
   justify-content: center;
-  align-items: center;
-  width: 50%;
-`
-
-const MyFormControl = styled(Form.Control)`
-  color: #000000;
-  background-color: transparent;
-  border-size: 0.5px;
-  border-color:  #00000030;
-  border-radius: 0px;
-  border-top: transparent;
-  border-right: transparent;
-  border-left: transparent;
+  margin: 0 20% 0 20%;
 `
 
 const CreateCell = () => {
@@ -62,22 +51,34 @@ const CreateCell = () => {
               <Form.Group controlId="cellPurpose">
                 <Form.Label>Cell Purpose</Form.Label>
                 <Form.Control
-                  required
+                  as="select"
                   name="purpose"
                   type="text"
-                  placeholder="Free Exchange/Marketplace/Ind. Seller"
                   onChange={handleChange}
-                />
+                >
+                  <option>Select One</option>
+                  <option>Free Exchange</option>
+                  <option>Marketplace</option>
+                  <option>Ind. Seller</option>
+                  <option>Forum</option>
+                </Form.Control>
               </Form.Group>
-              <Form.Group style={{ width: '30%' }} controlId="title">
-              <MyFormControl
-                required
-                type="text"
-                name="title"
-                placeholder="Enter Title"
-                onChange={handleChange}
-              />
-            </Form.Group>
+              <Form.Group controlId="cellTag">
+                <Form.Label>Tags</Form.Label>
+                <Form.Control
+                  as="select"
+                  name="Tags"
+                  type="text"
+                  onChange={handleChange}
+                >
+                  <option>Select One</option>
+                  <option>Free Exchange</option>
+                  <option>Marketplace</option>
+                  <option>Ind. Seller</option>
+                  <option>Forum</option>
+                </Form.Control>
+              </Form.Group>
+              <Tag/>
               <Button variant="dark" type="submit">Submit</Button>
             </Form>
           </div>

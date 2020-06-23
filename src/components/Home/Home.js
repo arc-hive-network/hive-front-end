@@ -1,5 +1,5 @@
 import React, { Fragment } from 'react'
-import { Route, Link } from 'react-router-dom'
+// import { Route, Link } from 'react-router-dom'
 import HiveMain from '../HiveMain/HiveMain'
 
 import hiveLogo from '../../Hive Logo.png'
