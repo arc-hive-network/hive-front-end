@@ -1,6 +1,7 @@
 import React from 'react'
 import Header from '../shared/Header'
 import { Route } from 'react-router-dom'
+import MyAccount from '../MyAccount/MyAccount'
 
 // Sub Components
 import CreateCell from './subComp/CreateCell/CreateCell'
@@ -12,7 +13,7 @@ const HiveMain = () => {
       <Header />
       <main>
         <Route path='/profile' render={() => (
-          <div>profile</div>
+          <div><MyAccount /></div>
         )} />
         <Route path='/messages' render={() => (
           <div>messages</div>
