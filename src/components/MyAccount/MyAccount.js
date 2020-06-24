@@ -32,18 +32,56 @@ const MyAccount = ({ user }) => {
                     <>
                         <Link to='/profile'><Button>View</Button></Link>
                         <Form>
-                            <div>
-                            <Form.Group controlId="cellName">
+                        <Form.Group controlId="name">
                                 <Form.Label>Name</Form.Label>
                                 <Form.Control
                                     required
                                     type="text"
                                     name="text"
-                                    placeholder="your name"
+                                    placeholder="name"
                                     // onChange={}
                                 />
                             </Form.Group>
-                            </div>
+                            <Form.Group controlId="handle">
+                                <Form.Label>Handle</Form.Label>
+                                <Form.Control
+                                    required
+                                    type="text"
+                                    name="text"
+                                    placeholder="handle"
+                                    // onChange={}
+                                />
+                            </Form.Group>
+                            <Form.Group controlId="pronouns">
+                                <Form.Label>Pronouns</Form.Label>
+                                <Form.Control
+                                    required
+                                    type="text"
+                                    name="text"
+                                    placeholder="pronouns"
+                                    // onChange={}
+                                />
+                            </Form.Group>
+                            <Form.Group controlId="email">
+                                <Form.Label>Email</Form.Label>
+                                <Form.Control
+                                    required
+                                    type="text"
+                                    name="text"
+                                    placeholder="email"
+                                    // onChange={}
+                                />
+                            </Form.Group>
+                            <Form.Group controlId="phone">
+                                <Form.Label>Phone</Form.Label>
+                                <Form.Control
+                                    required
+                                    type="text"
+                                    name="text"
+                                    placeholder="phone"
+                                    // onChange={}
+                                />
+                            </Form.Group>
                         </Form>
                     </>
                 )
