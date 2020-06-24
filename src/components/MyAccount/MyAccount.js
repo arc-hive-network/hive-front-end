@@ -15,6 +15,11 @@ const MyAccount = ({ user }) => {
         updateUserInfo(newUserInfo);
     }
 
+    const handleSubmit = e => {
+        e.preventDefault();
+        console.log('SUBMIT!');
+    }
+
     return (
         <>
             <Route
@@ -37,8 +42,8 @@ const MyAccount = ({ user }) => {
                 render={ () => (
                     <>
                         <Link to='/profile'><Button>View</Button></Link>
-                        <Form>
-                        <Form.Group controlId="name">
+                        <Form onSubmit={handleSubmit}>
+                            <Form.Group controlId="name">
                                 <Form.Label>Name</Form.Label>
                                 <Form.Control
                                     required
@@ -94,7 +99,7 @@ const MyAccount = ({ user }) => {
                                 />
                             </Form.Group>
                             <Button variant="primary" type="submit">
-                                Submit
+                                Save Changes
                             </Button>
                         </Form>
                     </>
