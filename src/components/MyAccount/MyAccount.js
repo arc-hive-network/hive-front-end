@@ -5,10 +5,14 @@ import Button from 'react-bootstrap/Button'
 
 // user = { name, handle, pronouns, email, phone }
 const MyAccount = ({ user }) => {
-    const [userInfo,updateUserInfo] = useState( user )
+    // userInfo is used to track the user info inputed by the user on the edit page
+    const [userInfo,updateUserInfo] = useState(user)
 
+    // called onChange of form inputs; updates userInfo to reflect user input
     const handleChange = e => {
-        console.log(e.target.name,e.target.value)
+        let newUserInfo = userInfo;
+        newUserInfo[e.target.name] = e.target.value;
+        updateUserInfo(newUserInfo);
     }
 
     return (
@@ -19,11 +23,11 @@ const MyAccount = ({ user }) => {
                     <>
                         <Link to='/profile/edit'><Button>Edit</Button></Link>
                         <div>
-                            <div>{userInfo.name}</div>
-                            <div>{userInfo.handle}</div>
-                            <div>{userInfo.pronouns}</div>
-                            <div>{userInfo.email}</div>
-                            <div>{userInfo.phone}</div>
+                            <div>{user.name}</div>
+                            <div>{user.handle}</div>
+                            <div>{user.pronouns}</div>
+                            <div>{user.email}</div>
+                            <div>{user.phone}</div>
                         </div>
                     </>
                 )
@@ -41,6 +45,7 @@ const MyAccount = ({ user }) => {
                                     type="text"
                                     name="name"
                                     placeholder="name"
+                                    defaultValue={userInfo.name}
                                     onChange={handleChange}
                                 />
                             </Form.Group>
@@ -51,6 +56,7 @@ const MyAccount = ({ user }) => {
                                     type="text"
                                     name="handle"
                                     placeholder="handle"
+                                    defaultValue={userInfo.handle}
                                     onChange={handleChange}
                                 />
                             </Form.Group>
@@ -61,6 +67,7 @@ const MyAccount = ({ user }) => {
                                     type="text"
                                     name="pronouns"
                                     placeholder="pronouns"
+                                    defaultValue={userInfo.pronouns}
                                     onChange={handleChange}
                                 />
                             </Form.Group>
@@ -71,6 +78,7 @@ const MyAccount = ({ user }) => {
                                     type="text"
                                     name="email"
                                     placeholder="email"
+                                    defaultValue={userInfo.email}
                                     onChange={handleChange}
                                 />
                             </Form.Group>
@@ -81,9 +89,13 @@ const MyAccount = ({ user }) => {
                                     type="text"
                                     name="phone"
                                     placeholder="phone"
+                                    defaultValue={userInfo.phone}
                                     onChange={handleChange}
                                 />
                             </Form.Group>
+                            <Button variant="primary" type="submit">
+                                Submit
+                            </Button>
                         </Form>
                     </>
                 )
