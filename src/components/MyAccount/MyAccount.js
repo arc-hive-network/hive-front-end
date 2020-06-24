@@ -7,6 +7,10 @@ import Button from 'react-bootstrap/Button'
 const MyAccount = ({ user }) => {
     const [userInfo,updateUserInfo] = useState( user )
 
+    const handleChange = e => {
+        console.log(e.target.name,e.target.value)
+    }
+
     return (
         <>
             <Route
@@ -14,15 +18,13 @@ const MyAccount = ({ user }) => {
                 render={ () => (
                     <>
                         <Link to='/profile/edit'><Button>Edit</Button></Link>
-                        <Form>
-                            <div>
-                                <div>{userInfo.name}</div>
-                                <div>{userInfo.handle}</div>
-                                <div>{userInfo.pronouns}</div>
-                                <div>{userInfo.email}</div>
-                                <div>{userInfo.phone}</div>
-                            </div>
-                        </Form>
+                        <div>
+                            <div>{userInfo.name}</div>
+                            <div>{userInfo.handle}</div>
+                            <div>{userInfo.pronouns}</div>
+                            <div>{userInfo.email}</div>
+                            <div>{userInfo.phone}</div>
+                        </div>
                     </>
                 )
             } />
@@ -37,9 +39,9 @@ const MyAccount = ({ user }) => {
                                 <Form.Control
                                     required
                                     type="text"
-                                    name="text"
+                                    name="name"
                                     placeholder="name"
-                                    // onChange={}
+                                    onChange={handleChange}
                                 />
                             </Form.Group>
                             <Form.Group controlId="handle">
@@ -47,9 +49,9 @@ const MyAccount = ({ user }) => {
                                 <Form.Control
                                     required
                                     type="text"
-                                    name="text"
+                                    name="handle"
                                     placeholder="handle"
-                                    // onChange={}
+                                    onChange={handleChange}
                                 />
                             </Form.Group>
                             <Form.Group controlId="pronouns">
@@ -57,9 +59,9 @@ const MyAccount = ({ user }) => {
                                 <Form.Control
                                     required
                                     type="text"
-                                    name="text"
+                                    name="pronouns"
                                     placeholder="pronouns"
-                                    // onChange={}
+                                    onChange={handleChange}
                                 />
                             </Form.Group>
                             <Form.Group controlId="email">
@@ -67,9 +69,9 @@ const MyAccount = ({ user }) => {
                                 <Form.Control
                                     required
                                     type="text"
-                                    name="text"
+                                    name="email"
                                     placeholder="email"
-                                    // onChange={}
+                                    onChange={handleChange}
                                 />
                             </Form.Group>
                             <Form.Group controlId="phone">
@@ -77,9 +79,9 @@ const MyAccount = ({ user }) => {
                                 <Form.Control
                                     required
                                     type="text"
-                                    name="text"
+                                    name="phone"
                                     placeholder="phone"
-                                    // onChange={}
+                                    onChange={handleChange}
                                 />
                             </Form.Group>
                         </Form>
