@@ -1,14 +1,14 @@
-import React, {useState, useEffect} from 'react';
+import React, {useState} from 'react';
 import {Route, Link} from 'react-router-dom'
 import Form from 'react-bootstrap/Form'
 import Button from 'react-bootstrap/Button'
 
 // user = { name, handle, pronouns, email, phone }
-const MyAccount = ({ user }) => {
+const MyAccount = ({ user, handleSubmitUserInfo }) => {
     // userInfo is used to track the user info inputed by the user on the edit page
     const [userInfo,updateUserInfo] = useState(user)
 
-    // called onChange of form inputs; updates userInfo to reflect user input
+    // called onChange of form inputs
     const handleChange = e => {
         let newUserInfo = userInfo;
         newUserInfo[e.target.name] = e.target.value;
@@ -17,7 +17,9 @@ const MyAccount = ({ user }) => {
 
     const handleSubmit = e => {
         e.preventDefault();
+        // handleSubmitUserInfo(userInfo);
         console.log('SUBMIT!');
+        // change URL to /profile
     }
 
     return (
