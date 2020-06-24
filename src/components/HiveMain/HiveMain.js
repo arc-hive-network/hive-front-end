@@ -13,7 +13,7 @@ const HiveMain = () => {
       <Header />
       <main>
         <Route path='/profile' render={() => (
-          <div><MyAccount /></div>
+          <div><MyAccount user={{name: 'Lorem', handle: 'lipsum', pronouns: 'they/them/theirs', email: 'lorem@ipsum.com', phone: '123-456-7890'}}/></div>
         )} />
         <Route path='/messages' render={() => (
           <div>messages</div>
