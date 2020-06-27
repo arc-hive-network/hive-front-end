@@ -13,11 +13,11 @@ class Tag extends React.Component {
 
         this.state = {
             tags: [
-                { id: "Thailand", text: "Thailand" },
-                { id: "India", text: "India" }
+                { id: "example1", text: "example tag 1" },
+                { id: "example2", text: "example tag 2" }
              ],
             suggestions: [
-                { id: 'USA', text: 'USA' },
+                { id: 'example3', text: 'suggestions 1' },
                 { id: 'Germany', text: 'Germany' },
                 { id: 'Austria', text: 'Austria' },
                 { id: 'Costa Rica', text: 'Costa Rica' },
