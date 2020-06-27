@@ -63,21 +63,6 @@ const CreateCell = () => {
                   <option>Forum</option>
                 </Form.Control>
               </Form.Group>
-              <Form.Group controlId="cellTag">
-                <Form.Label>Tags</Form.Label>
-                <Form.Control
-                  as="select"
-                  name="Tags"
-                  type="text"
-                  onChange={handleChange}
-                >
-                  <option>Select One</option>
-                  <option>Free Exchange</option>
-                  <option>Marketplace</option>
-                  <option>Ind. Seller</option>
-                  <option>Forum</option>
-                </Form.Control>
-              </Form.Group>
               <Tag/>
               <Button variant="dark" type="submit">Submit</Button>
             </Form>
