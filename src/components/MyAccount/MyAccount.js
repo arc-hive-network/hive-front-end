@@ -1,12 +1,20 @@
-import React, {useState} from 'react';
+import React, {useState, useEffect} from 'react';
 import {Route, Link} from 'react-router-dom'
 import Form from 'react-bootstrap/Form'
 import Button from 'react-bootstrap/Button'
 
-// user = { name, handle, pronouns, email, phone }
-const MyAccount = ({ user, handleSubmitUserInfo }) => {
+const MyAccount = () => {
     // userInfo is used to track the user info inputed by the user on the edit page
-    const [userInfo,updateUserInfo] = useState(user)
+    // user = { name, handle, pronouns, email, phone }
+    const [userInfo,updateUserInfo] = useState({name: 'error', handle: 'error', pronouns: 'err/err/oor', email: 'error@error.com', phone: 'err-orer-rore'})
+
+    // fetch user info on component update
+    useEffect(()=>{
+        // add API call to fetch user info
+        // const res = fetch('URL')
+        // const data = res.json();
+        // updateUserInfo(data);
+    })
 
     // called onChange of form inputs
     const handleChange = e => {
@@ -17,8 +25,7 @@ const MyAccount = ({ user, handleSubmitUserInfo }) => {
 
     const handleSubmit = e => {
         e.preventDefault();
-        // handleSubmitUserInfo(userInfo);
-        console.log('SUBMIT!');
+        // make api call to update user info
         // change URL to /profile
     }
 
@@ -30,11 +37,11 @@ const MyAccount = ({ user, handleSubmitUserInfo }) => {
                     <>
                         <Link to='/profile/edit'><Button>Edit</Button></Link>
                         <div>
-                            <div>{user.name}</div>
-                            <div>{user.handle}</div>
-                            <div>{user.pronouns}</div>
-                            <div>{user.email}</div>
-                            <div>{user.phone}</div>
+                            <div>{userInfo.name}</div>
+                            <div>{userInfo.handle}</div>
+                            <div>{userInfo.pronouns}</div>
+                            <div>{userInfo.email}</div>
+                            <div>{userInfo.phone}</div>
                         </div>
                     </>
                 )
