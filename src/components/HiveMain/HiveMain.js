@@ -1,11 +1,15 @@
-import React from 'react'
+import React, { useState } from 'react'
 import Header from '../shared/Header'
 import { Route } from 'react-router-dom'
 
 // Sub Components
 import CreateCell from './subComp/CreateCell/CreateCell'
+import Feed from '../Feed/Feed.js'
+import CellMain from '../CellMain/CellMain.js'
 
 const HiveMain = () => {
+  // The cell that is or was last being viewed
+  const [selectedCell, setSelectedCell] = useState({})
 
   return (
     <div>
@@ -21,7 +25,10 @@ const HiveMain = () => {
           <CreateCell />
         )} />
         <Route path='/feed' render={() => (
-          <div>feed</div>
+          <Feed setSelectedCell={setSelectedCell}/>
+        )} />
+        <Route path='/cell' render={() => (
+          <CellMain selectedCell={selectedCell}/>
         )} />
       </main>
     </div>
