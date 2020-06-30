@@ -12,10 +12,7 @@ class Tag extends React.Component {
         super(props);
 
         this.state = {
-            tags: [
-                { id: "example1", text: "example tag 1" },
-                { id: "example2", text: "example tag 2" }
-             ],
+            tags: [],
             suggestions: [
                 { id: 'example3', text: 'suggestions 1' },
                 { id: 'Germany', text: 'Germany' },
