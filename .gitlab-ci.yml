@@ -17,7 +17,7 @@ Build React App:
 
 Run Unit Tests:
   stage: Run Tests
-  tags:
+  tags: 
     - npm
   script:
     - npm -v
