@@ -1,0 +1,31 @@
+stages:
+  - Compile Build
+  - Run Tests
+  - Run Scans
+  - Run Gates
+  - Ship Artifacts
+
+before_script:
+  - echo "starting $CI_JOB_STAGE"
+
+Build React App:
+  stage: Compile Build
+  tags:
+    - npm
+  script:
+    - npm -v
+
+Run Unit Tests:
+  stage: Run Tests
+  tags: 
+    - npm
+  script:
+    - npm -v
+
+Ship Artifacts:
+  stage: Ship Artifacts
+  tags:
+    - npm
+  script:
+    - npm -v
+
