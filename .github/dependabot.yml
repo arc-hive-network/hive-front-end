@@ -1,0 +1,38 @@
+version: 2
+updates:
+- package-ecosystem: github-actions
+  directory: /
+  multi-ecosystem-group: weekly-patches
+  patterns:
+  - '*'
+  ignore:
+  - dependency-name: '*'
+    update-types:
+    - version-update:semver-major
+    - version-update:semver-minor
+  allow:
+  - dependency-type: direct
+    update-types:
+    - version-update:semver-patch
+- package-ecosystem: npm
+  directory: /
+  multi-ecosystem-group: weekly-patches
+  patterns:
+  - '*'
+  ignore:
+  - dependency-name: '*'
+    update-types:
+    - version-update:semver-major
+    - version-update:semver-minor
+  allow:
+  - dependency-type: direct
+    update-types:
+    - version-update:semver-patch
+multi-ecosystem-groups:
+  weekly-patches:
+    schedule:
+      interval: weekly
+      day: monday
+      time: 09:00
+      timezone: America/Los_Angeles
+    open-pull-requests-limit: 1
