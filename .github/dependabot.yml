@@ -1,0 +1,31 @@
+# Weekly dependency patches across all configured ecosystems.
+version: 2
+updates:
+- package-ecosystem: github-actions
+  directory: /
+  multi-ecosystem-group: weekly-patches
+  patterns:
+  - '*'
+  ignore:
+  - dependency-name: '*'
+    update-types:
+    - version-update:semver-major
+    - version-update:semver-minor
+- package-ecosystem: npm
+  directory: /
+  multi-ecosystem-group: weekly-patches
+  patterns:
+  - '*'
+  ignore:
+  - dependency-name: '*'
+    update-types:
+    - version-update:semver-major
+    - version-update:semver-minor
+multi-ecosystem-groups:
+  weekly-patches:
+    schedule:
+      interval: weekly
+      day: monday
+      time: 09:00
+      timezone: America/Los_Angeles
+    open-pull-requests-limit: 1
