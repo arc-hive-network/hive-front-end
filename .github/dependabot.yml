@@ -1,4 +1,3 @@
-# Weekly dependency patches across all configured ecosystems.
 version: 2
 updates:
 - package-ecosystem: github-actions
@@ -11,6 +10,10 @@ updates:
     update-types:
     - version-update:semver-major
     - version-update:semver-minor
+  allow:
+  - dependency-type: direct
+    update-types:
+    - version-update:semver-patch
 - package-ecosystem: npm
   directory: /
   multi-ecosystem-group: weekly-patches
@@ -21,6 +24,10 @@ updates:
     update-types:
     - version-update:semver-major
     - version-update:semver-minor
+  allow:
+  - dependency-type: direct
+    update-types:
+    - version-update:semver-patch
 multi-ecosystem-groups:
   weekly-patches:
     schedule:
